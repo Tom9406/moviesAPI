@@ -79,3 +79,16 @@ C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\runtimes\win\lib\net7.0\S
 C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\Microsoft.ApplicationInsights.dll
+C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\Microsoft.ApplicationInsights.AspNetCore.dll
+C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\Microsoft.AI.DependencyCollector.dll
+C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\Microsoft.AI.EventCounterCollector.dll
+C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\Microsoft.AI.WindowsServer.dll
+C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\Microsoft.Extensions.Logging.ApplicationInsights.dll
+C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\13199\source\repos\moviesAPI\bin\Debug\net7.0\EntityFrameworkCore.QueryBuilder.Abstractions.dll

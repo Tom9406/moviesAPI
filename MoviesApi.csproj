@@ -4,9 +4,14 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationInsightsResourceId>/subscriptions/6cce74aa-721c-4321-bf16-d9bee5fc9e5b/resourceGroups/movies940609/providers/microsoft.insights/components/MoviesApi</ApplicationInsightsResourceId>
+    <UserSecretsId>1deaa31b-9bce-4edf-8297-e3ce56a29b27</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="EntityFrameworkCore.Data.QueryBuilder.Abstractions" Version="7.0.1" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
@@ -17,10 +22,6 @@
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Filters\" />
   </ItemGroup>
 
 </Project>

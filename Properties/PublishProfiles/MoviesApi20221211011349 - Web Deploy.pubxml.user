@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAVfECfCbiR0eoXNTquYVqBwAAAAACAAAAAAAQZgAAAAEAACAAAACNAiMLFwie9XU9sNYVYA/xwIqiMS2VaxjnTChINRnTCwAAAAAOgAAAAAIAACAAAABNDlDQMuYh4C4VVKI4u7QxG32rQHA8fpwhU5qd+fu4fYAAAABp8HiKW+bgsBbbT7UikKqssQghLYwg5P7LpRcdVXlJn95LR9PfeX5fznAUTyNmYjn5IsjD5nRqG3bqFZHOP4D35XKc1WhsFxWp5G0rNjRWm2mtB1qT6JQwLo/1D7//V78FlHV081pd5BNiePSnHmZgMiPYEky5mojUU16OlDXVRUAAAADqJIpDObQpZ1opRD6ixpLRHqi6MYnRRgcu1J2eJCXk0PjmdZ+ZQBXYT3mxn0MZQx556BuxURbE/kRAeKmOtqI0</EncryptedPassword>
+    <History>True|2022-12-11T15:11:41.8857064Z;True|2022-12-11T16:09:38.5990647+01:00;True|2022-12-11T16:01:35.6784238+01:00;True|2022-12-11T15:59:26.9215482+01:00;True|2022-12-11T15:56:13.5985976+01:00;True|2022-12-11T15:52:31.6413729+01:00;True|2022-12-11T15:37:51.9052196+01:00;True|2022-12-11T15:06:11.2605321+01:00;True|2022-12-11T14:58:59.5915223+01:00;True|2022-12-11T14:50:49.3204694+01:00;True|2022-12-11T14:29:12.9037377+01:00;True|2022-12-11T13:56:41.3808806+01:00;True|2022-12-11T02:22:22.6425538+01:00;True|2022-12-11T02:07:20.2513743+01:00;True|2022-12-11T01:57:27.8296247+01:00;True|2022-12-11T01:28:19.1002905+01:00;True|2022-12-11T01:24:27.8072686+01:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <EFMigrations Include="MoviesApi.ApplicationDbContext">
+      <Value>Data Source=tcp:moviesapidbserver940609.database.windows.net,1433%3bInitial Catalog=MoviesApi_db%3bUser Id=adriannievescruz%40moviesapidbserver940609%3bPassword=Mibackenddefisica!</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

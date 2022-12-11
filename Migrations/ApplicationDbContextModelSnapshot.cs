@@ -38,6 +38,39 @@ namespace MoviesApi.Migrations
 
                     b.ToTable("Genres");
                 });
+
+            modelBuilder.Entity("MoviesApi.Entities.subject", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<int>("id_student")
+                        .HasColumnType("int");
+
+                    b.Property<int>("intents_number")
+                        .HasColumnType("int");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("score")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Subjects");
+                });
 #pragma warning restore 612, 618
         }
     }
