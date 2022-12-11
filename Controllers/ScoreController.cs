@@ -20,20 +20,18 @@ namespace MoviesApi.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<List<examDTO>>> Get(int id)
+        public async Task<ActionResult<List<ScoreDTO>>> Get(int id)
         {
-            var exams = await context.Subjects.ToListAsync();
-            var score = new Score();
-            var exam1 = new List<exam>();
-
-            foreach (var exam in exams)
+            var scores = await context.Score.ToListAsync();
+            var scores1 = new List<Score>();
+            foreach (var score in scores)
             {
-                if (score.id_subject == id)
+                if (score.id_exam == id)
                 {
-                    exam1.Add(exam);
+                    scores1.Add(score);
                 }
             }
-            return mapper.Map<List<examDTO>>(exam1);
+            return mapper.Map<List<ScoreDTO>>(scores1);
         }
 
         [HttpPost]

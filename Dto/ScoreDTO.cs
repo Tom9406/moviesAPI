@@ -7,7 +7,7 @@ namespace MoviesApi.Dto
     {
         [Key]
         public int id { get; set; }
-        public int id_subject { get; set; } = 0;
+        public int id_exam { get; set; } = 0;
         public int answer { get; set; } = 0;
         public int question_number { get; set; } = 0;
         public string full_name_responsable { get; set; } = string.Empty;
