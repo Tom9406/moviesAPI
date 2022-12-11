@@ -12,9 +12,9 @@ namespace MoviesApi.Helpers
             CreateMap<GenresDto, Genre>().ReverseMap();
             CreateMap<GenresCreationDto, Genre>();
 
-            //Subjects
-            CreateMap<subjectDTO, subject>().ReverseMap();
-            CreateMap<subjectCreationDTO, subject>();
+            //EXAM
+            CreateMap<examDTO, exam>().ReverseMap();
+            CreateMap<examCreationDTO, exam>();
 
             //USER
             CreateMap<UserDTO, user>().ReverseMap();
@@ -23,6 +23,11 @@ namespace MoviesApi.Helpers
             //LOGIN
             CreateMap<LoginDTO, login>().ReverseMap();
             CreateMap<LoginCreationDTO, login>();
+
+            //SCORE
+            //LOGIN
+            CreateMap<ScoreDTO, Score>().ReverseMap();
+            CreateMap<ScoreCreationDTO, Score>();
 
 
         }

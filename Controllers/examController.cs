@@ -8,22 +8,22 @@ namespace MoviesApi.Controllers
 {
     [Route("subject")]
     [ApiController]
-    public class SubjectController:ControllerBase
+    public class examController:ControllerBase
     {
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
         
-        public SubjectController (ApplicationDbContext context, IMapper mapper)
+        public examController (ApplicationDbContext context, IMapper mapper)
         {
             this.context = context;
             this.mapper = mapper;
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<List<subjectDTO>>> Get(int id)
+        public async Task<ActionResult<List<examDTO>>> Get(int id)
         {
             var asignatura = await context.Subjects.ToListAsync();
-            var asignatura_1 = new List<subject>();
+            var asignatura_1 = new List<exam>();
 
             foreach (var subject in asignatura)
             {
@@ -32,15 +32,15 @@ namespace MoviesApi.Controllers
                     asignatura_1.Add(subject);
                 }
             }
-            return mapper.Map<List<subjectDTO>>(asignatura_1);
+            return mapper.Map<List<examDTO>>(asignatura_1);
         }
 
         [HttpGet("test")]
-        public async Task<ActionResult<List<subjectDTO>>> Get()
+        public async Task<ActionResult<List<examDTO>>> Get()
         {
 
             var asignatura = await context.Subjects.ToListAsync();
-            var asignatura_1 = new List<subject>();
+            var asignatura_1 = new List<exam>();
 
             foreach (var subject in asignatura)
             {
@@ -51,16 +51,17 @@ namespace MoviesApi.Controllers
                 }
 
             }
-            return mapper.Map<List<subjectDTO>>(asignatura_1);
+            return mapper.Map<List<examDTO>>(asignatura_1);
 
         }
-
+        
+        
         [HttpGet("test/checked")]
-        public async Task<ActionResult<List<subjectDTO>>> Get_checked()
+        public async Task<ActionResult<List<examDTO>>> Get_checked()
         {
 
             var asignatura = await context.Subjects.ToListAsync();
-            var asignatura_1 = new List<subject>();
+            var asignatura_1 = new List<exam>();
 
             foreach (var subject in asignatura)
             {
@@ -71,17 +72,37 @@ namespace MoviesApi.Controllers
                 }
 
             }
-            return mapper.Map<List<subjectDTO>>(asignatura_1);
+            return mapper.Map<List<examDTO>>(asignatura_1);
+
+        }
+
+        [HttpGet("test/unchecked")]
+        public async Task<ActionResult<List<examDTO>>> Get_unchecked()
+        {
+
+            var asignatura = await context.Subjects.ToListAsync();
+            var asignatura_1 = new List<exam>();
+
+            foreach (var subject in asignatura)
+            {
+                if (subject.status == true)
+                {
+                    asignatura_1.Add(subject);
+
+                }
+
+            }
+            return mapper.Map<List<examDTO>>(asignatura_1);
 
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] subjectCreationDTO subjectCreationDTO)
+        public async Task<ActionResult> Post([FromBody] examCreationDTO subjectCreationDTO)
         {
 
-            var subject = mapper.Map<subject>(subjectCreationDTO);
+            var subject = mapper.Map<exam>(subjectCreationDTO);
             var asignatura = await context.Subjects.ToListAsync();
-            var subject1 = new List<subject>();
+            var subject1 = new List<exam>();
             var count = 1;
 
             foreach (var asignatura1 in asignatura)

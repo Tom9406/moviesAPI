@@ -2,7 +2,7 @@
 
 namespace MoviesApi.Dto
 {
-    public class subjectDTO
+    public class examDTO
     {
 
         [Key]
