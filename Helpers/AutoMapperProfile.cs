@@ -16,6 +16,11 @@ namespace MoviesApi.Helpers
             CreateMap<subjectDTO, subject>().ReverseMap();
             CreateMap<subjectCreationDTO, subject>();
 
+            //USER
+            CreateMap<UserDTO, subject>().ReverseMap();
+            CreateMap<UserCreationDTO, subject>();
+
+
         }
     }
 }

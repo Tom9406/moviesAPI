@@ -111,3 +111,30 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20221211155752_usercontroller')
+BEGIN
+    CREATE TABLE [User] (
+        [id] int NOT NULL IDENTITY,
+        [full_name] nvarchar(max) NOT NULL,
+        [phone_number] int NOT NULL,
+        [type] nvarchar(max) NOT NULL,
+        [email] nvarchar(max) NOT NULL,
+        [password] nvarchar(max) NOT NULL,
+        CONSTRAINT [PK_User] PRIMARY KEY ([id])
+    );
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20221211155752_usercontroller')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20221211155752_usercontroller', N'7.0.0');
+END;
+GO
+
+COMMIT;
+GO
+
