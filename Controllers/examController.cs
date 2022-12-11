@@ -6,7 +6,7 @@ using MoviesApi.Entities;
 
 namespace MoviesApi.Controllers
 {
-    [Route("subject")]
+    [Route("exam")]
     [ApiController]
     public class examController:ControllerBase
     {
@@ -104,6 +104,8 @@ namespace MoviesApi.Controllers
             var asignatura = await context.Subjects.ToListAsync();
             var subject1 = new List<exam>();
             var count = 1;
+           
+           
 
             foreach (var asignatura1 in asignatura)
             {
@@ -111,8 +113,11 @@ namespace MoviesApi.Controllers
                 {
                     count++;
                     subject1.Add(asignatura1);
+                    
+
                 }
             }
+           
             subject.intents_number = count;
             context.Add(subject);
             await context.SaveChangesAsync();
