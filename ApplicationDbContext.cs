@@ -19,5 +19,8 @@ namespace MoviesApi
         //User
         public DbSet<user> User { get; set; }
 
+        //Login
+        public DbSet<login> login { get; set; }
+
     }
 }

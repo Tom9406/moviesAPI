@@ -39,6 +39,27 @@ namespace MoviesApi.Migrations
                     b.ToTable("Genres");
                 });
 
+            modelBuilder.Entity("MoviesApi.Entities.login", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("login");
+                });
+
             modelBuilder.Entity("MoviesApi.Entities.subject", b =>
                 {
                     b.Property<int>("id")
