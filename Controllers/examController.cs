@@ -96,6 +96,47 @@ namespace MoviesApi.Controllers
 
         }
 
+
+        [HttpGet("test/unchecked/{id:int}")]
+        public async Task<ActionResult<List<examDTO>>> Get_unchecked_id(int id)
+        {
+
+            var asignatura = await context.Subjects.ToListAsync();
+            var asignatura_1 = new List<exam>();
+
+            foreach (var subject in asignatura)
+            {
+                if (subject.status == true && subject.id_student==id)
+                {
+                    asignatura_1.Add(subject);
+
+                }
+
+            }
+            return mapper.Map<List<examDTO>>(asignatura_1);
+
+        }
+
+        [HttpGet("test/checked/{id:int}")]
+        public async Task<ActionResult<List<examDTO>>> Get_checked_id(int id)
+        {
+
+            var asignatura = await context.Subjects.ToListAsync();
+            var asignatura_1 = new List<exam>();
+
+            foreach (var subject in asignatura)
+            {
+                if (subject.status == false && subject.id_student == id)
+                {
+                    asignatura_1.Add(subject);
+
+                }
+
+            }
+            return mapper.Map<List<examDTO>>(asignatura_1);
+
+        }
+
         [HttpPost]
         public async Task<ActionResult<int>> Post([FromBody] examCreationDTO subjectCreationDTO)
         {
@@ -138,7 +179,15 @@ namespace MoviesApi.Controllers
             return NoContent();
         }
 */
-
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var subject = await context.Subjects.FirstOrDefaultAsync(x => x.id == id);
+            if (subject == null) { return NotFound(); }
+            context.Remove(subject);
+            await context.SaveChangesAsync();
+            return NoContent();
+        }
     }
 }
 
