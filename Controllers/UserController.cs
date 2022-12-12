@@ -51,6 +51,7 @@ namespace MoviesApi.Controllers
                     user2.phone_number = user.phone_number;
                     user2.type = user.type;
                     user2.password = user.password;
+                    user2.full_name = user.full_name;
 
 
 
