@@ -45,11 +45,13 @@ namespace MoviesApi.Controllers
 
             foreach (var user2 in users)
             {
-                if (user2.email.Equals(user.email) && user2.password.Equals(user.password))
+                if (user2.email.Equals(user.email))
                 {
                   user2.group = user.group;
                     user2.phone_number = user.phone_number;
                     user2.type = user.type;
+                    user2.password = user.password;
+
 
 
                 }

@@ -6,6 +6,8 @@ namespace MoviesApi.Entities
     {
         [Key]
         public int id { get; set; }
+
+        [EmailAddress(ErrorMessage = "Wrong email format")]
         public string email { get; set; }
         public string password { get; set; }
     }
