@@ -20,7 +20,7 @@ namespace MoviesApi.Controllers
             this.mapper = mapper;
         }
 
-        [HttpGet]
+        [HttpPost]
         public async Task<ActionResult<List<UserDTO>>> Get([FromBody] LoginCreationDTO loginCreationDTO)
         {
             var login = mapper.Map<login>(loginCreationDTO);

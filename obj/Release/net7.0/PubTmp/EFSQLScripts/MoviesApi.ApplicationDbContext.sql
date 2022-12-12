@@ -219,3 +219,49 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20221211180323_ScoreControllerAdd')
+BEGIN
+    CREATE TABLE [Score] (
+        [id] int NOT NULL IDENTITY,
+        [id_subject] int NOT NULL,
+        [answer] int NOT NULL,
+        [question_number] int NOT NULL,
+        [full_name_responsable] nvarchar(max) NOT NULL,
+        [justify] nvarchar(max) NOT NULL,
+        CONSTRAINT [PK_Score] PRIMARY KEY ([id])
+    );
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20221211180323_ScoreControllerAdd')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20221211180323_ScoreControllerAdd', N'7.0.0');
+END;
+GO
+
+COMMIT;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20221211190330_ScoreControllerUpdate')
+BEGIN
+    EXEC sp_rename N'[Score].[id_subject]', N'id_exam', N'COLUMN';
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20221211190330_ScoreControllerUpdate')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20221211190330_ScoreControllerUpdate', N'7.0.0');
+END;
+GO
+
+COMMIT;
+GO
+
