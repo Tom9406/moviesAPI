@@ -97,28 +97,31 @@ namespace MoviesApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] examCreationDTO subjectCreationDTO)
+        public async Task<ActionResult<int>> Post([FromBody] examCreationDTO subjectCreationDTO)
         {
-
             var subject = mapper.Map<exam>(subjectCreationDTO);
             var asignatura = await context.Subjects.ToListAsync();
             var subject1 = new List<exam>();
-            var count = 1;        
+            var count = 1;    
+            var temp= new exam();
 
             foreach (var asignatura1 in asignatura)
             {
                 if (asignatura1.id_student.Equals(subject.id_student) && asignatura1.name.Equals(subject.name))
                 {
                     count++;
-                    subject1.Add(asignatura1);                
-
+                    subject1.Add(asignatura1);
+                    
                 }
             }
            
             subject.intents_number = count;
             context.Add(subject);
+             
+
             await context.SaveChangesAsync();
-            return NoContent();
+            temp.id = subject.id;
+            return temp.id;
         }
         /*
         [HttpPut("{id:int}")]

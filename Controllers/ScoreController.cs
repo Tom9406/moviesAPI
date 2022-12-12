@@ -35,10 +35,10 @@ namespace MoviesApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] ScoreCreationDTO scoreCreationDTO)
+        public async Task<ActionResult> Post([FromBody] List<ScoreCreationDTO> scoreCreationDTO)
         {
-            var score = mapper.Map<Score>(scoreCreationDTO);
-            context.Add(score);
+            var scores = mapper.Map<List<Score>>(scoreCreationDTO);
+            foreach(var score in scores) { context.Add(score); }            
             await context.SaveChangesAsync();
             return NoContent();
         }
