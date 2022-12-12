@@ -39,6 +39,21 @@ namespace MoviesApi.Controllers
         public async Task<ActionResult> Post([FromBody] UserCreationDTO userCreationDTO)
         {
             var user = mapper.Map<user>(userCreationDTO);
+            var users = await context.User.ToListAsync();
+            var users1 = new user();
+            
+
+            foreach (var user2 in users)
+            {
+                if (user2.email.Equals(user.email) && user2.password.Equals(user.password))
+                {
+                  user2.group = user.group;
+                    user2.phone_number = user.phone_number;
+                    user2.type = user.type;
+
+
+                }
+            }
             context.Add(user);
             await context.SaveChangesAsync();
             return NoContent();

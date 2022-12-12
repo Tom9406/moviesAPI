@@ -103,17 +103,14 @@ namespace MoviesApi.Controllers
             var subject = mapper.Map<exam>(subjectCreationDTO);
             var asignatura = await context.Subjects.ToListAsync();
             var subject1 = new List<exam>();
-            var count = 1;
-           
-           
+            var count = 1;        
 
             foreach (var asignatura1 in asignatura)
             {
                 if (asignatura1.id_student.Equals(subject.id_student) && asignatura1.name.Equals(subject.name))
                 {
                     count++;
-                    subject1.Add(asignatura1);
-                    
+                    subject1.Add(asignatura1);                
 
                 }
             }
