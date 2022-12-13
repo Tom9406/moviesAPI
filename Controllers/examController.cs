@@ -154,31 +154,26 @@ namespace MoviesApi.Controllers
                     subject1.Add(asignatura1);
                     
                 }
-            }
-           
+            }           
             subject.intents_number = count;
             context.Add(subject);
-             
-
             await context.SaveChangesAsync();
             temp.id = subject.id;
             return temp.id;
         }
-        /*
+
+
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> Put(int id, [FromBody] asignaturaCreationDTO asignaturaCreationDTO)
+        public async Task<ActionResult> Put(int id, [FromBody] examCreationDTO subjectCreationDTO) 
         {
-            
-            var subject = mapper.Map<asignatura>(asignaturaCreationDTO);
-            subject=  await context.asignatura.FirstOrDefaultAsync(x => x.id == id);
-            asignaturaCreationDTO.intents_number = subject.intents_number;
-            subject.score = asignaturaCreationDTO.score;
-            subject.intents_number = asignaturaCreationDTO.intents_number + 1;
+            var subject = mapper.Map<exam>(subjectCreationDTO);
+            subject.id = id;
+            subject.status = !subject.status;
             context.Entry(subject).State = EntityState.Modified;
             await context.SaveChangesAsync();
             return NoContent();
         }
-*/
+
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {

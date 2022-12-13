@@ -35,6 +35,23 @@ namespace MoviesApi.Controllers
             return mapper.Map<List<UserDTO>>(user_1);
         }
 
+
+        [HttpGet("students")]
+        public async Task<ActionResult<List<UserDTO>>> Get()
+        {
+            var users = await context.User.ToListAsync();
+            var user_1 = new List<user>();
+
+            foreach (var user_2 in users)
+            {
+                if (user_2.type == "Estudiante")
+                {
+                    user_1.Add(user_2);
+                }
+            }
+            return mapper.Map<List<UserDTO>>(user_1);
+        }
+
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] UserCreationDTO userCreationDTO)
         {
@@ -52,9 +69,6 @@ namespace MoviesApi.Controllers
                     user2.type = user.type;
                     user2.password = user.password;
                     user2.full_name = user.full_name;
-
-
-
                 }
             }
             context.Add(user);
