@@ -168,7 +168,7 @@ namespace MoviesApi.Controllers
         {
             var subject = mapper.Map<exam>(subjectCreationDTO);
             subject.id = id;
-            subject.status = !subject.status;
+            subject.status = false;
             context.Entry(subject).State = EntityState.Modified;
             await context.SaveChangesAsync();
             return NoContent();
