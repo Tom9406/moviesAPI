@@ -2,6 +2,7 @@
 using MoviesApi.Controllers;
 using MoviesApi.Dto;
 using MoviesApi.Entities;
+using System.Runtime.CompilerServices;
 
 namespace MoviesApi.Helpers
 {
@@ -14,7 +15,7 @@ namespace MoviesApi.Helpers
 
             //EXAM
             CreateMap<examDTO, exam>().ReverseMap();
-            CreateMap<examCreationDTO, exam>();
+            CreateMap<examCreationDTO, exam>(); //.ForMember(c =>  c.intents_number , option => option.Ignore()).ForMember(c => c.name, option => option.Ignore());
 
             //USER
             CreateMap<UserDTO, user>().ReverseMap();

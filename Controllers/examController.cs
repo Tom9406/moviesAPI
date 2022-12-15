@@ -164,11 +164,13 @@ namespace MoviesApi.Controllers
 
 
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> Put(int id, [FromBody] examCreationDTO subjectCreationDTO) 
+        public async Task<ActionResult> Put(int id, int score) 
         {
-            var subject = mapper.Map<exam>(subjectCreationDTO);
+            var exam = new examCreationDTO();
+            var subject = mapper.Map<exam>(exam );
             subject.id = id;
             subject.status = false;
+            subject.score = score;
             context.Entry(subject).State = EntityState.Modified;
             await context.SaveChangesAsync();
             return NoContent();
