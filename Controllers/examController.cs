@@ -164,15 +164,33 @@ namespace MoviesApi.Controllers
 
 
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> Put(int id, int score) 
+        public async Task<ActionResult> Put(int id, [FromBody] examCreationDTO examCreationDTO) 
         {
-            var exam = new examCreationDTO();
-            var subject = mapper.Map<exam>(exam );
-            subject.id = id;
-            subject.status = false;
-            subject.score = score;
-            context.Entry(subject).State = EntityState.Modified;
+            var count = 1;
+            var asignatura = await context.Subjects.ToListAsync();
+            var exam = await context.Subjects.FirstOrDefaultAsync(x => x.id == id);
+            foreach (var asignatura1 in asignatura)
+            {
+                if (asignatura1.id_student.Equals(asignatura1.id_student) )
+                {
+                    count++;
+                }
+            }
+            
+
+            exam.score = examCreationDTO.score;
+            var test  = new exam();
+            test.name = exam.name;
+            test.type=exam.type;    
+            exam = mapper.Map(examCreationDTO, exam);
+            exam.name = test.name;
+            exam.type = test.type;
+            exam.status = test.status;
+            exam.intents_number = count;
+            context.Entry(exam).State = EntityState.Modified;
+
             await context.SaveChangesAsync();
+
             return NoContent();
         }
 
