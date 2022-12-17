@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MoviesApi.Dto;
 using MoviesApi.Entities;
+using MoviesApi.Helpers;
 
 namespace MoviesApi.Controllers
 {
@@ -37,10 +38,13 @@ namespace MoviesApi.Controllers
 
 
         [HttpGet("students")]
-        public async Task<ActionResult<List<UserDTO>>> Get()
+        public async Task<ActionResult<List<UserDTO>>> Get([FromQuery] paginationDTO paginationDTO)
         {
-            var users = await context.User.ToListAsync();
+           
             var user_1 = new List<user>();
+            var queryable = context.User.AsQueryable();
+            await HttpContext.InsetParametersPaginationInHeader(queryable);
+            var users = await queryable.OrderBy(x => x.full_name).Paginate(paginationDTO).ToListAsync();
 
             foreach (var user_2 in users)
             {

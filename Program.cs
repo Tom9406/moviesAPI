@@ -22,7 +22,7 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
     {
-        builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+        builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader().WithExposedHeaders(new string[] { "totalAmountRecords" });
     });
 });
 builder.Services.AddApplicationInsightsTelemetry(builder.Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"]);
