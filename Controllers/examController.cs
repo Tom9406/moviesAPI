@@ -187,11 +187,14 @@ namespace MoviesApi.Controllers
             exam.type = test.type;
             exam.status = test.status;
             exam.intents_number = count;
+
+
+
             context.Entry(exam).State = EntityState.Modified;
 
             await context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok(exam);    
         }
 
         [HttpDelete("{id:int}")]

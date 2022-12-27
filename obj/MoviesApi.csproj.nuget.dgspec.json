@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\13199\\source\\repos\\moviesAPI\\MoviesApi.csproj": {}
+    "C:\\Users\\jose-antonio.alvarez\\Documents\\Personal\\moviesAPA\\moviesAPI\\MoviesApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\13199\\source\\repos\\moviesAPI\\MoviesApi.csproj": {
+    "C:\\Users\\jose-antonio.alvarez\\Documents\\Personal\\moviesAPA\\moviesAPI\\MoviesApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\13199\\source\\repos\\moviesAPI\\MoviesApi.csproj",
+        "projectUniqueName": "C:\\Users\\jose-antonio.alvarez\\Documents\\Personal\\moviesAPA\\moviesAPI\\MoviesApi.csproj",
         "projectName": "MoviesApi",
-        "projectPath": "C:\\Users\\13199\\source\\repos\\moviesAPI\\MoviesApi.csproj",
-        "packagesPath": "C:\\Users\\13199\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\13199\\source\\repos\\moviesAPI\\obj\\",
+        "projectPath": "C:\\Users\\jose-antonio.alvarez\\Documents\\Personal\\moviesAPA\\moviesAPI\\MoviesApi.csproj",
+        "packagesPath": "C:\\Users\\jose-antonio.alvarez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jose-antonio.alvarez\\Documents\\Personal\\moviesAPA\\moviesAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\13199\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jose-antonio.alvarez\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -50,29 +50,37 @@
             },
             "Microsoft.ApplicationInsights.AspNetCore": {
               "target": "Package",
-              "version": "[2.21.0, )"
+              "version": "[2.22.0-beta1, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.1, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.1, )"
+            },
+            "Microsoft.Private.Intellisense": {
+              "target": "Package",
+              "version": "[1.0.0-rc3-24214-00, )"
+            },
+            "Microsoft.VisualStudio.Language.Intellisense": {
+              "target": "Package",
+              "version": "[17.4.255, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -102,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

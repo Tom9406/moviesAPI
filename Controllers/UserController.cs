@@ -56,10 +56,13 @@ namespace MoviesApi.Controllers
             return mapper.Map<List<UserDTO>>(user_1);
         }
 
-        [HttpPost]
-        public async Task<ActionResult> Post([FromBody] UserCreationDTO userCreationDTO)
+        [HttpPost("teacher")]
+        public async Task<ActionResult> Post_teacher([FromBody] UserCreationDTO userCreationDTO)
         {
             var user = mapper.Map<user>(userCreationDTO);
+
+            /*aqui  se debe retoranr error en caso de existir arrreglar esto*/
+
             var users = await context.User.ToListAsync();
             var users1 = new user();
             
@@ -68,18 +71,73 @@ namespace MoviesApi.Controllers
             {
                 if (user2.email.Equals(user.email))
                 {
-                  user2.group = user.group;
-                    user2.phone_number = user.phone_number;
-                    user2.type = user.type;
-                    user2.password = user.password;
-                    user2.full_name = user.full_name;
+                    /*ver como retornar el error que va qui es el caso que el email exista enotnces se debe retornar un eroor email already exist*/
+                    break;
                 }
             }
+            /* if (/*aqui va la condicon de si exiaste error*//*) { return /*error*///; }
+                                                                                    // else {
             context.Add(user);
+            await context.SaveChangesAsync();
+            return NoContent();
+            // }
+        }
+
+        [HttpPost("student")]
+        public async Task<ActionResult> Post_student([FromBody] UserCreationDTO userCreationDTO)
+        {
+            var user = mapper.Map<user>(userCreationDTO);
+           
+           
+
+            /*aqui  se debe retoranr error en caso de existir arrreglar esto*/
+
+            
+                       
+            var users = await context.User.ToListAsync();
+            var users1 = new user();
+
+
+            foreach (var user2 in users)
+            {
+                if (user2.email.Equals(user.email))
+                {
+                    /*ver como retornar el error que va qui es el caso que el email exista enotnces se debe retornar un eroor email already exist*/
+
+                    break;
+                }
+            }
+
+           /* if (/*aqui va la condicon de si exiaste error*//*) { return /*error*///; }
+           // else { 
+            context.Add(user);
+            await context.SaveChangesAsync();
+            return NoContent();
+           
+        }
+
+        [HttpPut("student")]
+        public async Task<ActionResult> Put_student(int id, [FromBody] UserCreationDTO userCreationDTO)
+        {
+            var user = mapper.Map<user>(userCreationDTO);
+            user.id = id;
+            context.Entry(id).State = EntityState.Modified;
+            await context.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpPut("teacher")]
+        public async Task<ActionResult> Put_teacher(int id, [FromBody] UserCreationDTO userCreationDTO)
+        {
+            var user = mapper.Map<user>(userCreationDTO);
+            user.id = id;
+            context.Entry(id).State = EntityState.Modified;
             await context.SaveChangesAsync();
             return NoContent();
         }
 
 
-        }
+
+
+    }
 }
